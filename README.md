@@ -20,6 +20,28 @@ because it increments, so only whole numbers are needed. You can't do half a bou
 I didn't get an error from Step 4, but I did get errors in several other places for not including the "f" at the end of assigning the r, g, b values.
 
 ### W3
+Table #5
+
+*Imagine we need to design a method to perform the following function. What would you make the parameters (input) and return type (output) of this method?*
+
+1. You’re building a visual novel, and you’re writing a method named GetResponse that gives you a character’s text response to a player’s dialogue choice. The relevant data for the dialogue choice are the player’s current friendship level with the character and a flag that tells you whether or not the player knows the character’s secret.
+    Parameters: player dialogue choice, friendship level, knows secret
+    Return type: (string)response dialogue
+
+2. You’re building a horror game, and you’re writing a method named SetLightDimness that makes the room’s lights brighter or darker based on the player’s current sanity level. The player’s sanity level is a number that goes from 0% - 100%. The method changes the light itself, so it doesn’t need any output.
+    Parameters: sanity
+
+3. You’re building a rhythm game, and you’re writing a method named DidPlayerHitBeat that tells you whether or not the player accurately hit a beat based on the time that they pressed a key.
+    Parameters: current beat, note beat
+    return: (boolean) hit beat?
+
+*With your table mates, come up with a metaphor to explain the relationship between classes and Components with a metaphor. Also describe how methods and member variables factor into that metaphor.  Remember that classes are templates that can become Components; member variables are traits of each class; and methods are things the class can do.*
+    Components are a dish. Classes are the recipe for that dish, with the member variables being the ingredients list and the methods being the actual instructions to use those ingredients.
+
+*Why do you think the balls get extremely bright, especially in the Scene, if they bounce too many times?*
+    Since the brightness is just multiplied every time it bounces, each bounce mutiplies the brightness without ever changing it back, making more bounces brighter than the last.
+
+### W4
 Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
 
 ## Open-Source Assets
