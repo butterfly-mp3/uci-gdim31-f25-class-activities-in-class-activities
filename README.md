@@ -48,6 +48,10 @@ Table #5
     Of course it worked perfectly...
     There was a point where I forget to put .text at the end of _pointsText... Eventually I figured out what I was missing but for a second I was going insane.
 
+### W5
+1. Member variable to store the transform of the object we want the deer to navigate to
+2. Start() function, to set the deer's target at the start of the project
+
 
 ## Open-Source Assets
 ### W1
