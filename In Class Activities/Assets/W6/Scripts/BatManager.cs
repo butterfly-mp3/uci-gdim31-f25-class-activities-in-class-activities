@@ -9,6 +9,8 @@ public class BatManager : MonoBehaviour
     [SerializeField] private float _timeBetweenNewMessages = 0.5f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private TMP_Text _reactionUiPrefab;
+    [SerializeField] private BatW6[] _bats = new BatW6[10];
+    [SerializeField] private string[] _messages = new string[3];
     // STEP 1 -----------------------------------------------------------------
     // Add a member variable named "_bats" that's an array of BatW6 Components.
     // In the Inspector, add ALL of the bats in the Scene.
@@ -38,7 +40,7 @@ public class BatManager : MonoBehaviour
         // That means the bat at _bats[0] has a timer at _newTextTimers[0],
         //      the bat at _bats[1] has a timer at _newTextTimers[1],
         //      and so on.
-        // _newTextTimers = new [_bats.Length];
+        _newTextTimers = new float[_bats.Length];
         // STEP 6 -------------------------------------------------------------
     }
 
@@ -48,7 +50,10 @@ public class BatManager : MonoBehaviour
         // STEP 7 -------------------------------------------------------------
         // Loop through all of the entries in _newTextTimers, and increase each
         //      timer's value by the amount of time that passed this frame.
-        
+        for(int i = 0; i < _newTextTimers.Length; i++)
+        {
+            _newTextTimers[i] += Time.deltaTime;
+        }
 
         // STEP 7 -------------------------------------------------------------
 
@@ -63,7 +68,22 @@ public class BatManager : MonoBehaviour
         // You will need to check the Vector3 documentation to find a method
         //      to help you with that distance check :)
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
-        //
+    for(int i = 0; i < _bats.Length; i++)
+    {
+        float _distance = Vector2.Distance(_bats[i].transform.position, _playerTransform.position);
+        if (_distance < _interactDistance)
+        {
+            _bats[i].activateBat();
+        }
+        else
+        {
+            _bats[i].deactivateBat();
+        }
+        if (_distance < _overlapDistance)
+        {
+            CreateReactions(_bats[i]);
+        }
+    }
         // STEP 4
         // Also inside this for loop, if the distance between the bat and the
         //      player is less than _overlapDistance, call CreateReactions()
@@ -78,6 +98,10 @@ public class BatManager : MonoBehaviour
     // ------------------------------------------------------------------------
     private void CreateReactions(BatW6 bat)
     {
+        int _messageIdx = Random.Range(0, _messages.Length);
+        Debug.Log(_messages[_messageIdx]);
+        SpawnReactionUI(bat, _messages[_messageIdx]);
+        
         // STEP 5 -------------------------------------------------------------
         // The Random.Range() method can be used to give us a random number
         //      between two values.
@@ -107,7 +131,7 @@ public class BatManager : MonoBehaviour
         // /* starts the comments, and */ ends it.
         // Simply uncomment the below lines by removing the /* and */ to finish.
 
-        /*
+        
         int index = System.Array.IndexOf(_bats, bat);
         
         GridLayoutGroup layout = bat.GetComponentInChildren<GridLayoutGroup>();
@@ -117,7 +141,7 @@ public class BatManager : MonoBehaviour
             TMP_Text textObj = Instantiate(_reactionUiPrefab, layout.transform);
             textObj.text = message;
         }
-        */
+        
 
         // STEP 8 -------------------------------------------------------------
     }

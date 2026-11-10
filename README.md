@@ -52,6 +52,10 @@ Table #5
 1. Member variable to store the transform of the object we want the deer to navigate to
 2. Start() function, to set the deer's target at the start of the project
 
+### W6
+1. Unity Engine & Other Resources: https://docs.google.com/document/d/1Fxju-gH8z3KSIUe_cAsdHcYuC53D5640jN2wh0G2C0s/edit?tab=t.0
+2. Monobehavior script, float to keep track of speed (uses serialize feild), public methods for starting the chase and ending the chase, update to move the bats?
+
 
 ## Open-Source Assets
 ### W1
