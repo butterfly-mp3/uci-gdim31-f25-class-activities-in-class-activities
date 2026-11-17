@@ -56,6 +56,9 @@ Table #5
 1. Unity Engine & Other Resources: https://docs.google.com/document/d/1Fxju-gH8z3KSIUe_cAsdHcYuC53D5640jN2wh0G2C0s/edit?tab=t.0
 2. Monobehavior script, float to keep track of speed (uses serialize feild), public methods for starting the chase and ending the chase, update to move the bats?
 
+### W7
+1. What was wrong with the code in Step 2?
+    It was previously using the position and altering that, which uses the global coordinates. By calling Translate instead it moves it along the local axis, making the direction of the muskrat actually affect the movement.
 
 ## Open-Source Assets
 ### W1
