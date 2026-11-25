@@ -48,17 +48,30 @@ Table #5
     Of course it worked perfectly...
     There was a point where I forget to put .text at the end of _pointsText... Eventually I figured out what I was missing but for a second I was going insane.
 
-### W5
+### W5 no assigned in-class activity
+
+### W6 (W5 activity)
 1. Member variable to store the transform of the object we want the deer to navigate to
 2. Start() function, to set the deer's target at the start of the project
 
-### W6
+### W7 (W6 activity)
 1. Unity Engine & Other Resources: https://docs.google.com/document/d/1Fxju-gH8z3KSIUe_cAsdHcYuC53D5640jN2wh0G2C0s/edit?tab=t.0
 2. Monobehavior script, float to keep track of speed (uses serialize feild), public methods for starting the chase and ending the chase, update to move the bats?
 
-### W7
+### W8 (W7 activity)
 1. What was wrong with the code in Step 2?
     It was previously using the position and altering that, which uses the global coordinates. By calling Translate instead it moves it along the local axis, making the direction of the muskrat actually affect the movement.
+
+### W9
+https://docs.google.com/drawings/d/1n_HUxweaknAF5YEwXf-8vnfUesHdTB-Y750CszYdGYg/edit?usp=sharing
+
+Things Completed:
+- Added missing components to player for physics and animation
+- Updated as many member variables as I could without having to add any components
+- Added two timers to the explosion and kick animations
+- Added tilemap layer for floor and gave it tilemap collider component
+
+https://docs.google.com/drawings/d/1n_HUxweaknAF5YEwXf-8vnfUesHdTB-Y750CszYdGYg/edit?usp=sharing
 
 ## Open-Source Assets
 ### W1
